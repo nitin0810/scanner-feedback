@@ -20,3 +20,9 @@
 .invalid{
     border-bottom: 0.5px solid red;
 }
+
+//shows which option is selected in sidebar
+.activePage{
+    background-color :  grey;
+    font-weight:bolder;
+}

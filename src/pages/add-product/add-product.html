@@ -1,0 +1,112 @@
+<!--
+  Generated template for the AddProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-toolbar>
+      <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+          <span>Cancel</span>
+        </button>
+      </ion-buttons>
+      <ion-title>Add Product</ion-title>
+    </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div text-center padding>
+    <button ion-button icon-only>
+      <ion-icon name="qr-scanner"></ion-icon>
+      Scan Code
+    </button>
+
+    <h2>OR</h2>
+
+  </div>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Select Brand</ion-label>
+      <ion-select>
+        <ion-option *ngFor="let b of brands" [value]="b">{{b}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Select Category</ion-label>
+      <ion-select>
+        <ion-option *ngFor="let c of categories" [value]="c">{{c}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Select Model</ion-label>
+      <ion-select>
+        <ion-option *ngFor="let m of models" [value]="m">{{m}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Purchase Date</ion-label>
+      <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="MMM DD, YYYY"></ion-datetime>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Warranty</ion-label>
+      <ion-select>
+        <ion-option value="6 months">6 months</ion-option>
+        <ion-option value="1 years">1 years</ion-option>
+        <ion-option value="2 years">2 years</ion-option>
+        <ion-option value="3 years">3 years</ion-option>
+        <ion-option value="5 years">5 years</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label stacked>Registration No.</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label stacked>Buyer Name</ion-label>
+      <ion-input placeholder='Optional'></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label stacked>Dealer Name</ion-label>
+      <ion-input placeholder='Optional'></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label stacked>Address</ion-label>
+      <ion-input placeholder='Optional'></ion-input>
+    </ion-item>
+  </ion-card>
+
+  <button ion-button full (click)="onProductAdd()">Continue</button>
+
+</ion-content>

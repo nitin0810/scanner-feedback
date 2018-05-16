@@ -8,6 +8,9 @@ import { MyApp } from './app.component';
 import { CustomHttpService } from '../providers/custom-http.service';
 import { CustomService } from '../providers/custom.service';
 import { AuthService } from '../providers/auth.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NetworkService } from '../providers/network.service';
+import { Network } from '@ionic-native/network';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { AuthService } from '../providers/auth.service';
     BrowserModule,
     IonicModule.forRoot(MyApp,{
       preloadModules: true
-    })
+    }),
+    HttpClientModule,
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,7 +34,9 @@ import { AuthService } from '../providers/auth.service';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CustomHttpService,
     CustomService,
-    AuthService
+    AuthService,
+    Network,
+    NetworkService
   ]
-})
+})      
 export class AppModule {}

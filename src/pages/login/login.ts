@@ -47,7 +47,7 @@ export class LoginPage {
     if (this.loginForm.valid) {
 
       //TO BE REMOVED 
-
+this.navigate();
 
       // this.customService.showLoader("Authenticating...");
       // this.authService.login(this.loginForm.value)
