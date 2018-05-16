@@ -14,3 +14,9 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+// class for showing some invalid inout indication in a input field
+.invalid{
+    border-bottom: 0.5px solid red;
+}
