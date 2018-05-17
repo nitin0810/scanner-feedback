@@ -33,7 +33,6 @@ export class AddProductPage {
   }
 
   onProductAdd() {
-    this.customService
     this.customService.showToast('Product added successfully');
     this.dismiss();
   }

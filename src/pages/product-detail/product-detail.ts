@@ -15,11 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProductDetailPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  product: any;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+  ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProductDetailPage');
+    this.product = this.navParams.get('product');
+  }
+
+  openReportIncidentPage() {
+    this.navCtrl.push('AddIncidentPage');
   }
 
 }

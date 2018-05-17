@@ -25,14 +25,14 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item *ngFor="let p of products">
+    <ion-item *ngFor="let p of products;let i=index" (click)="openProductDetailPage(i)">
       <ion-avatar item-start>
         <img [src]="p.img">
       </ion-avatar>
       <h3>
         <b>Model: </b>{{p.name}}</h3>
       <h3>
-        <b>Reg Date: </b>{{p.regDate}}</h3>
+        <b>Purchase Date: </b>{{p.purDate}}</h3>
       <h3>
         <b>{{p.category}}</b>
       </h3>

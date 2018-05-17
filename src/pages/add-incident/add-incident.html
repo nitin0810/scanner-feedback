@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Report Incident</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <h2>Incident Details</h2>
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Select Category</ion-label>
+        <ion-select>
+          <ion-option *ngFor="let c of categories" [value]="c">{{c}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Select Subcategory</ion-label>
+        <ion-select>
+          <ion-option *ngFor="let s of subCategories" [value]="s">{{s}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label stacked>Description</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item>
+  </ion-card>
+
+  <div margin text-center>
+    <button text-center ion-button>Add Image (optional)</button>
+  </div>
+
+  <ion-list>
+    <ion-list-header>User Details</ion-list-header>
+    <ion-item>
+      <ion-label stacked>Name</ion-label>
+      <ion-input value="Vijay"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input value="9563214578"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Address</ion-label>
+      <ion-input value="A-456, Sec 46, Dwarka"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>

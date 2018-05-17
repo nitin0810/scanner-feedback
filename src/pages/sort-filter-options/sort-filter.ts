@@ -63,24 +63,24 @@ export class SortFilterOptionsPage implements OnInit {
             title: 'Sort By',
             buttons: [
                 {
-                    text: 'Title',
+                    text: 'Category',
                     handler: () => {
                         /** this event is being listened in complaint.ts, 1st parameter is for sort, 2nd is for filter*/
-                        this.onSelect.emit({ sortName: 'title', filter: null });
+                        // this.onSelect.emit({ sortName: 'title', filter: null });
                     }
                 },
                 {
-                    text: 'Category',
+                    text: 'Purchase Date',
                     handler: () => {
                         //show further options of complaintCatgories
-                        this.onSelect.emit({ sortName: 'category', filter: null });
+                        // this.onSelect.emit({ sortName: 'category', filter: null });
 
                     }
                 },
                 {
-                    text: 'Status',
+                    text: 'Warranty',
                     handler: () => {
-                        this.onSelect.emit({ sortName: 'status', filter: null });
+                        // this.onSelect.emit({ sortName: 'status', filter: null });
 
                     }
                 },
@@ -102,23 +102,16 @@ export class SortFilterOptionsPage implements OnInit {
             title: 'Filter By',
             buttons: [
                 {
-                    text: 'Priority',
+                    text: 'Brand',
                     handler: () => {
-                        this.filterBySubCategories(1);
-
-                    }
-                },
-                {
-                    text: 'Status',
-                    handler: () => {
-                        this.filterBySubCategories(2);
+                        // this.filterBySubCategories(1);
 
                     }
                 },
                 {
                     text: 'Category',
                     handler: () => {
-                        this.filterBySubCategories(3);
+                        // this.filterBySubCategories(3);
 
                     }
                 },

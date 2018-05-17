@@ -11,6 +11,7 @@ import { AuthService } from '../providers/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NetworkService } from '../providers/network.service';
 import { Network } from '@ionic-native/network';
+import { ProductService } from '../providers/product.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { Network } from '@ionic-native/network';
     CustomService,
     AuthService,
     Network,
-    NetworkService
+    NetworkService,
+    ProductService
   ]
 })      
 export class AppModule {}
