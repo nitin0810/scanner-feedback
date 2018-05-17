@@ -49,6 +49,13 @@ export class MyApp extends UserSessionManage {
       return;
     }
 
+    if (page.component === 'NA') {
+      this.activePage = '';
+      this.menu.close();
+      this.events.publish('user:logout');
+      return;
+    }
+
 
     this.activePage = page.component;
     this.menu.close();

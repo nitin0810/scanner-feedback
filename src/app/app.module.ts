@@ -13,6 +13,7 @@ import { NetworkService } from '../providers/network.service';
 import { Network } from '@ionic-native/network';
 import { ProductService } from '../providers/product.service';
 import { IncidentService } from '../providers/incidents.service';
+import { EngineerIncidentService } from '../providers/engineer.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { IncidentService } from '../providers/incidents.service';
     Network,
     NetworkService,
     ProductService,
-    IncidentService
+    IncidentService,
+    EngineerIncidentService
   ]
 })      
 export class AppModule {}

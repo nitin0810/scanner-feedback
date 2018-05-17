@@ -6,7 +6,7 @@ import { NetworkService } from '../providers/network.service';
 import { CustomService } from '../providers/custom.service';
 
 // declare var URLPREFIX;
-// declare var ROLE;
+declare var ROLE;
 export class UserSessionManage {
 
     rootPage: any;
@@ -120,12 +120,23 @@ export class UserSessionManage {
 
     decideSideMenuContent() {
 
+        if(ROLE==='customer'){
         this.sideMenuOptions = [
 
             { title: 'Home', component: "HomePage", icon: 'home' },
             { title: 'Products', component: "ProductsPage", icon: 'phone-portrait' },
             { title: 'Incidents', component: "IncidentsPage", icon: 'megaphone' },
+            { title: 'Logout', component: 'NA', icon: 'log-out' }
         ];
+    }else{
+        this.sideMenuOptions = [
+
+            { title: 'Home', component: "HomePage", icon: 'home' },
+            // { title: 'Products', component: "ProductsPage", icon: 'phone-portrait' },
+            { title: 'Incidents', component: "EngineerIncidentsPage", icon: 'megaphone' },
+            { title: 'Logout', component: 'NA', icon: 'log-out' }
+        ];
+    }
     }
 
     public imageUpdate() {
@@ -137,8 +148,9 @@ export class UserSessionManage {
     public logout() {
 
         localStorage.clear();
+        
         // URLPREFIX = undefined;
-        // ROLE = undefined;
+        ROLE = undefined;
         this.appCtrl.getRootNavs()[0].setRoot("LoginPage");
     }
 

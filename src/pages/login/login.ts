@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, Events, MenuController, FabList, M
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomService } from '../../providers/custom.service';
 import { AuthService } from '../../providers/auth.service';
-
+declare var ROLE;
 
 @IonicPage()
 @Component({
@@ -18,7 +18,7 @@ export class LoginPage {
   constructor(
     public navCtrl: NavController,
     public formBuilder: FormBuilder,
-    // private customService: CustomService,
+    private customService: CustomService,
     // private authService: AuthService,
     private events: Events,
     private menu: MenuController,
@@ -47,7 +47,16 @@ export class LoginPage {
     if (this.loginForm.valid) {
 
       //TO BE REMOVED 
-this.navigate();
+      if (this.loginForm.value.contactNo === '11') {
+        ROLE = 'customer';
+        this.navigate();
+      } else if (this.loginForm.value.contactNo === '12') {
+        ROLE = 'engineer';
+        this.navigate();
+      } else {
+        this.customService.showToast('Invalid Credentials');
+      }
+
 
       // this.customService.showLoader("Authenticating...");
       // this.authService.login(this.loginForm.value)
@@ -97,4 +106,3 @@ this.navigate();
   }
 
 }
-     
