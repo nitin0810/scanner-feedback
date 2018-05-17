@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Incident</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngIf="incident">
+
+    <ion-item>
+      <img item-start style="height: 70px;width: 70px" [src]="incident.img">
+      <h3>
+        <b>Model : </b>{{incident.name}}</h3>
+      <h3>
+        <b>Category : </b>{{incident.category}}
+      </h3>
+      <h3>
+        <b>Purchase Date : </b>{{incident.purDate}}</h3>
+      <h3>
+        <b>MRP : </b>{{incident.mrp}}</h3>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon item-start name="checkmark-circle"></ion-icon>
+      <ion-label>Status : </ion-label>
+      <p item-end>{{incident.incident.status}}</p>
+    </ion-item>
+
+    <ion-item text-wrap>
+      <h4>
+        <b>Description</b>
+      </h4>
+      <p>{{incident.incident.description}}</p>
+    </ion-item>
+
+    <ion-item *ngIf="incident.incident.images.length">
+      <h4>
+        <b>Available Images</b>
+      </h4>
+      <div padding text-center *ngFor="let img of incident.incident.images">
+        <img [src]="img">
+      </div>
+    </ion-item>
+
+    <div [ngSwitch]="incident.incident.status">
+
+      <div *ngSwitchCase="'New'"></div>
+
+      <div *ngSwitchCase="'Scheduled'">
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Scheduled : </ion-label>
+          <p item-end>{{incident.incident.scheduledDate}}</p>
+        </ion-item>
+
+        <!-- <ion-list no-lines>
+          <ion-list-header> Engineer Details </ion-list-header>
+          <ion-item>
+            <ion-icon item-start name="person"></ion-icon>
+            <p>{{incident.incident.engineer.name}}</p>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="call"></ion-icon>
+            <p>{{incident.incident.engineer.phone}}</p>
+          </ion-item>
+        </ion-list> -->
+
+      </div>
+
+      <div *ngSwitchCase="'Rescheduled'">
+          <ion-item>
+            <ion-icon item-start name="time"></ion-icon>
+            <h4>Rescheduled : </h4>
+            <p item-end>{{incident.incident.reScheduledDate}}</p>
+      
+          </ion-item>
+          <ion-grid *ngIf="!rescheduleConfirmed">
+              <ion-row justify-content-center>
+                <ion-col col-6 >
+                <button ion-button small (click)="onConfirm()">Confirm</button>
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button small (click)="onChange()">Change</button>
+                    </ion-col>
+              </ion-row>
+            </ion-grid>
+        </div>
+
+      <div *ngSwitchCase="'Engineer Assigned'">
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Scheduled : </ion-label>
+          <p item-end>{{incident.incident.scheduledDate}}</p>
+        </ion-item>
+
+        <ion-list no-lines>
+          <ion-list-header> Engineer Details </ion-list-header>
+          <ion-item>
+            <ion-icon item-start name="person"></ion-icon>
+            <p>{{incident.incident.engineer.name}}</p>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="call"></ion-icon>
+            <p>{{incident.incident.engineer.phone}}</p>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div *ngSwitchCase="'Fixed'">
+        <ion-list no-lines>
+          <ion-list-header> Engineer Details </ion-list-header>
+          <ion-item>
+            <ion-icon item-start name="person"></ion-icon>
+            <p>{{incident.incident.engineer.name}}</p>
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="call"></ion-icon>
+            <p>{{incident.incident.engineer.phone}}</p>
+          </ion-item>
+        </ion-list>
+        <div text-center>
+          <button ion-button small (click)="onFeedback()">Feedback</button>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'Rejected'">
+        <ion-item text-wrap>
+          <h4><b>Reason</b></h4>
+          <p>{{incident.incident.rejectReason}}</p>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

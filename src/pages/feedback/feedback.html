@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Feedback</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <rating text-center></rating>
+
+  <ion-item>
+    <ion-label stacked>Comment</ion-label>
+    <ion-textarea placeholder="Write some comment (optional)"></ion-textarea>
+  </ion-item>
+
+  <button ion-button full (click)="onSubmit()">Submit</button>
+
+</ion-content>

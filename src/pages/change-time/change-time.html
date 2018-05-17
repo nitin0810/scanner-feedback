@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Change Time</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Select Time</ion-label>
+    <ion-datetime displayFormat="MMM DD, YYYY HH:mm" pickerFormat="MMM DD, YYYY HH:mm"></ion-datetime>
+  </ion-item>
+
+  <button ion-button full (click)="onChangeTime()">Change</button>
+
+</ion-content>

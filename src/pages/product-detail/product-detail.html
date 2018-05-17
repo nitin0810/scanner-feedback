@@ -18,16 +18,14 @@
   <div *ngIf="product">
 
   <ion-item>
-    <!-- <ion-avatar item-start> -->
       <img item-start style="height: 70px;width: 70px" [src]="product.img">
-    <!-- </ion-avatar> -->
     <h3>
       <b>Model : </b>{{product.name}}</h3>
     <h3>
       <b>Category : </b>{{product.category}}
     </h3>
     <h3>
-      <b>Reg Date : </b>{{product.regDate}}</h3>
+      <b>Purchase Date : </b>{{product.purDate}}</h3>
     <h3>
       <b>MRP : </b>{{product.mrp}}</h3>
 
@@ -41,7 +39,7 @@
   <h4 *ngIf="product.status==='ProblemInInstallation'"><b>Problem in Installing Product</b></h4>
 
   <button ion-button small *ngIf="product.status==='Scheduled'">Escalate</button>
-  <button ion-button small *ngIf="product.status==='Installed'">Feedback</button>
+  <button ion-button small *ngIf="product.status==='Installed'" (click)="openFeedbackPage()">Feedback</button>
   <button ion-button small *ngIf="product.status==='ProblemInInstallation'">View Details</button>
 
 </ion-card>

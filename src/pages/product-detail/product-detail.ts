@@ -31,4 +31,8 @@ export class ProductDetailPage {
     this.navCtrl.push('AddIncidentPage');
   }
 
+  openFeedbackPage(){
+    this.navCtrl.push('FeedbackPage');
+  }
+
 }

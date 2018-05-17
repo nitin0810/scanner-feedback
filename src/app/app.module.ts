@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NetworkService } from '../providers/network.service';
 import { Network } from '@ionic-native/network';
 import { ProductService } from '../providers/product.service';
+import { IncidentService } from '../providers/incidents.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProductService } from '../providers/product.service';
     AuthService,
     Network,
     NetworkService,
-    ProductService
+    ProductService,
+    IncidentService
   ]
 })      
 export class AppModule {}
