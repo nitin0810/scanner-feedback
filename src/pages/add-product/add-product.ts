@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { CustomService } from '../../providers/custom.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 
 
@@ -21,7 +22,9 @@ export class AddProductPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     private viewCtrl: ViewController,
-    private customService: CustomService) {
+    private customService: CustomService,
+    private barcodeScanner: BarcodeScanner
+  ) {
   }
 
   ionViewDidLoad() {
@@ -35,6 +38,15 @@ export class AddProductPage {
   onProductAdd() {
     this.customService.showToast('Product added successfully');
     this.dismiss();
+  }
+
+  openScanner() {
+    this.barcodeScanner.scan().then(barcodeData => {
+      alert(JSON.stringify(barcodeData));
+      console.log('Barcode data', barcodeData);
+    }).catch(err => {
+      console.log('Error', err);
+    });
   }
 
 }

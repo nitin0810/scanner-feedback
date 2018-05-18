@@ -14,6 +14,7 @@ import { Network } from '@ionic-native/network';
 import { ProductService } from '../providers/product.service';
 import { IncidentService } from '../providers/incidents.service';
 import { EngineerIncidentService } from '../providers/engineer.service';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EngineerIncidentService } from '../providers/engineer.service';
     NetworkService,
     ProductService,
     IncidentService,
-    EngineerIncidentService
+    EngineerIncidentService,
+    BarcodeScanner
   ]
 })      
 export class AppModule {}

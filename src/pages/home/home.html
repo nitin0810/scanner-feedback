@@ -18,7 +18,7 @@
 
 <ion-content>
 
-  <ion-fab right bottom>
+  <ion-fab right bottom *ngIf="role==='customer'">
     <button ion-fab (click)="openAddProductPage()">
       <ion-icon  name="add"></ion-icon>
     </button>

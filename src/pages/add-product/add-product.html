@@ -13,7 +13,7 @@
           <span>Cancel</span>
         </button>
       </ion-buttons>
-      <!-- <ion-title>Add Product</ion-title> -->
+      <ion-title>Add Product</ion-title>
     </ion-toolbar>
   </ion-navbar>
 
@@ -24,7 +24,7 @@
 
   <div text-center padding>
     <img src="https://www.iconshock.com/image/Stroke/Computer_gadgets/barcode_scanner" class="status-image center-block"/>
-    <button ion-button round>
+    <button ion-button round (click)="openScanner()">
       Scan Code
     </button>
 
