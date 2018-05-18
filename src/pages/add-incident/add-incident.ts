@@ -17,12 +17,18 @@ export class AddIncidentPage {
 
   categories=['Display','Power Supply','Sound','Physical Damage'];
   subCategories=['Not Functioning Properly','Completely Damaged'];
+  products=['LG 190 TV','Samsung S4 Mobile','LG MN190 Microwave Oven','Carrier 1.5 Ton Split AC'];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  fromFabBtn = false;// to decide if this page is opened through fab btn or incident -detail page
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+  
+  ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddIncidentPage');
+    this.fromFabBtn = this.navParams.get('fromFabBtn');
   }
 
 }

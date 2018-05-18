@@ -46,12 +46,21 @@
 
       <div *ngSwitchCase="'New'"></div>
 
-      <ion-card>
-        <ion-item *ngSwitchCase="'Scheduled'">
+      <ion-card *ngSwitchCase="'Scheduled'">
+        <ion-item >
           <ion-icon item-start name="time" color="primary"></ion-icon>
           <ion-label>Scheduled : </ion-label>
           <p item-end>{{incident.incident.scheduledDate}}</p>
         </ion-item>
+            <ion-list-header> Engineer Details </ion-list-header>
+            <ion-item>
+              <ion-icon item-start name="person" color="primary"></ion-icon>
+              {{incident.incident.engineer.name}}
+            </ion-item>
+            <ion-item>
+              <ion-icon item-start name="call" color="primary"></ion-icon>
+              {{incident.incident.engineer.phone}}
+            </ion-item>
 
       </ion-card>
 

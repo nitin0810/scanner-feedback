@@ -21,9 +21,13 @@ export class IncidentsPage {
   ionViewDidLoad() {
     this.incidents = this.incidentService.getIncidents();
   }
-  
+
   openIncidentDetailPage(index: number) {
     this.navCtrl.push('IncidentPage', { 'incident': this.incidents[index] });
+  }
+
+  openNewIncidentPage() {
+    this.navCtrl.push('AddIncidentPage', { 'fromFabBtn': true });
   }
 
 }

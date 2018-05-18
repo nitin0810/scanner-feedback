@@ -12,6 +12,13 @@
   <ion-card>
     <ion-list>
 
+        <ion-item *ngIf="fromFabBtn">
+            <ion-label>Select Product</ion-label>
+            <ion-select>
+              <ion-option *ngFor="let p of products" [value]="p">{{p}}</ion-option>
+            </ion-select>
+          </ion-item>
+
       <ion-item>
         <ion-label>Select Category</ion-label>
         <ion-select>
