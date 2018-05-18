@@ -50,6 +50,8 @@ export class IncidentService {
                 incident: {
                     status: 'Fixed', created: '1 day ago', description: "Product's display not working properly",scheduledDate:'11:00 AM, 24 May 2018',
                     engineer:{name:'Mukesh Kumar',phone:'8965471235'},
+                    commentByEngineer:'IC 345 got burnt and diplay kit is in bad condition, Problem has been fixed temporarily, kit replacement is needed .',
+                    fixDate:'10:40 AM, 25 Jun 2018',
                     rejectReason:'Product is out of warranty',
                     images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_tZn7f6OQ2SLG4EguSdCzYPsMjJzURiUuso6wcqvc7EbnMC883A','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5OBu3oV53dJWzc-HUyzChgolbkOm7VtSrtKXH_IHuwDRPE0fs3g']
                 }   

@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-navbar>
@@ -12,8 +11,140 @@
 
   <div *ngIf="incident">
 
+    <ion-item>
+      <img item-start style="height: 70px;width: 70px" [src]="incident.img">
+      <h3>
+        <b>Model : </b>{{incident.name}}</h3>
+      <h3>
+        <b>Category : </b>{{incident.category}}
+      </h3>
+      <h3>
+        <b>Purchase Date : </b>{{incident.purDate}}</h3>
+      <h3>
+        <b>MRP : </b>{{incident.mrp}}</h3>
+    </ion-item>
 
-    
+    <ion-list>
+      <ion-list-header>Customer Details</ion-list-header>
+      <ion-item>
+        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-label>Name : </ion-label>
+        <p item-end>{{incident.customer.name}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-label>Address : </ion-label>
+        <p item-end>{{incident.customer.address}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-label>Phone : </ion-label>
+        <p item-end>{{incident.customer.phone}}</p>
+      </ion-item>
+    </ion-list>
+
+    <div [ngSwitch]="incident.incident.status">
+
+      <div *ngSwitchCase="'Engineer Assigned'">
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button small (click)="onSchedule()">Schedule</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button small (click)="onReject()">Reject</button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <div *ngSwitchCase="'Scheduled'">
+
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Scheduled : </ion-label>
+          <p item-end>{{incident.incident.scheduledDate}}</p>
+        </ion-item>
+
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button small (click)="onSchedule()">Reschedule</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button small (click)="onReject()">Reject</button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button small (click)="onFixed()">Fixed</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button small (click)="onNotFixed()">Not Fixed</button>
+          </ion-col>
+        </ion-row>
+      </div>
+
+
+      <div *ngSwitchCase="'Fixed'">
+
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Scheduled : </ion-label>
+          <p item-end>{{incident.incident.scheduledDate}}</p>
+        </ion-item>
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Fixed : </ion-label>
+          <p item-end>{{incident.incident.fixed.date}}</p>
+        </ion-item>
+        <!-- IMAGES OF FIXED ITEM -->
+        <ion-item *ngIf="incident.incident.fixed.images && incident.incident.fixed.images.length">
+          <h4>
+            <b>Images of Fixed Product</b>
+          </h4>
+          <div padding text-center *ngFor="let img of incident.incident.fixed.images">
+            <img [src]="img">
+          </div>
+        </ion-item>
+        <!-- CUSTOMER'S SIGNATURE -->
+        <ion-item>
+          <!--ENGINEER'S COMMENT -->
+          <div  padding text-wrap>
+            <h5>
+              <b>Enginner's Comment</b>
+            </h5>
+            <p>{{incident.incident.fixed.comment}}</p>
+          </div>
+          <h4>
+            <b>Customer's signature</b>
+          </h4>
+          <div padding text-center>
+            <img [src]="incident.incident.fixed.signature">
+          </div>
+
+        </ion-item>
+        <!-- FEEDBACK BY CUSTOMER -->
+        <div  padding text-wrap>
+          <h5>
+            <b>Feedback By Customer</b>
+          </h5>
+          <ion-row align-items-center>
+            <ion-col col-3><b>Rating</b></ion-col>
+            <ion-col col-9>
+              <rating text-center [(ngModel)]="incident.incident.feedback.stars" readOnly="true"></rating>
+            </ion-col>
+          </ion-row>
+          <br>
+          <div>
+              <b>Comment</b>
+            <p>{{incident.incident.feedback.comment}}</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
   </div>
 
 </ion-content>

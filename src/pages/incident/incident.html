@@ -70,23 +70,23 @@
       </div>
 
       <div *ngSwitchCase="'Rescheduled'">
-          <ion-item>
-            <ion-icon item-start name="time"></ion-icon>
-            <h4>Rescheduled : </h4>
-            <p item-end>{{incident.incident.reScheduledDate}}</p>
-      
-          </ion-item>
-          <ion-grid *ngIf="!rescheduleConfirmed">
-              <ion-row justify-content-center>
-                <ion-col col-6 >
-                <button ion-button small (click)="onConfirm()">Confirm</button>
-                </ion-col>
-                <ion-col col-6>
-                    <button ion-button small (click)="onChange()">Change</button>
-                    </ion-col>
-              </ion-row>
-            </ion-grid>
-        </div>
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <h4>Rescheduled : </h4>
+          <p item-end>{{incident.incident.reScheduledDate}}</p>
+
+        </ion-item>
+        <ion-grid *ngIf="!rescheduleConfirmed">
+          <ion-row justify-content-center>
+            <ion-col col-6>
+              <button ion-button small (click)="onConfirm()">Confirm</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button small (click)="onChange()">Change</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
 
       <div *ngSwitchCase="'Engineer Assigned'">
         <ion-item>
@@ -109,6 +109,11 @@
       </div>
 
       <div *ngSwitchCase="'Fixed'">
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Fixed : </ion-label>
+          <p item-end>{{incident.incident.fixDate}}</p>
+        </ion-item>
         <ion-list no-lines>
           <ion-list-header> Engineer Details </ion-list-header>
           <ion-item>
@@ -120,6 +125,12 @@
             <p>{{incident.incident.engineer.phone}}</p>
           </ion-item>
         </ion-list>
+        <div>
+          <h5>
+            <b>Comment</b>
+          </h5>
+          <p>{{incident.incident.commentByEngineer}}</p>
+        </div>
         <div text-center>
           <button ion-button small (click)="onFeedback()">Feedback</button>
         </div>
@@ -127,7 +138,9 @@
 
       <div *ngSwitchCase="'Rejected'">
         <ion-item text-wrap>
-          <h4><b>Reason</b></h4>
+          <h4>
+            <b>Reason</b>
+          </h4>
           <p>{{incident.incident.rejectReason}}</p>
         </ion-item>
       </div>
