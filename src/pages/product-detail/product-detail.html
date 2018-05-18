@@ -6,18 +6,18 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Product</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Product Details</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
   <div *ngIf="product">
 
-  <ion-item>
+  <ion-item no-lines class="shadow">
       <img item-start style="height: 70px;width: 70px" [src]="product.img">
     <h3>
       <b>Model : </b>{{product.name}}</h3>
@@ -31,40 +31,53 @@
 
   </ion-item>
 
-<ion-card text-center padding>
+<div text-center padding>
 
-  <h4 *ngIf="product.status==='NotScheduled'"><b>Not Scheduled For Installation</b></h4>
-  <h4 *ngIf="product.status==='Scheduled'"><b>Scheduled For Installation</b></h4>
-  <h4 *ngIf="product.status==='Installed'"><b>Installation Complete</b></h4>
-  <h4 *ngIf="product.status==='ProblemInInstallation'"><b>Problem in Installing Product</b></h4>
+  <div *ngIf="product.status==='NotScheduled'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Circle-icons-hourglass.svg/768px-Circle-icons-hourglass.svg.png" class="status-image center-block" />
+    <h4><b>Not Scheduled For Installation</b></h4>
+  </div>
+  <div *ngIf="product.status==='Scheduled'">
+    <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/check-icon.png" class="status-image center-block" />
+    <h4><b>Scheduled For Installation</b></h4>
+  </div>
+  <div *ngIf="product.status==='Installed'">
+      <img src="http://bestfreeantiviruss.com/wp-content/uploads/2015/10/shield-ok-icon.png" class="status-image center-block" />
+    <h4><b>Installed</b></h4>
+  </div>
+  <div *ngIf="product.status==='ProblemInInstallation'">
+    <img src='http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-warning-icon.png' class="status-image center-block" />
+    <h4><b>Problem in Installing Product</b></h4>
+  </div>
 
-  <button ion-button small *ngIf="product.status==='Scheduled'">Escalate</button>
-  <button ion-button small *ngIf="product.status==='Installed'" (click)="openFeedbackPage()">Feedback</button>
+  <button ion-button small *ngIf="product.status==='Scheduled'" round>Escalate Process</button>
+  <button ion-button small *ngIf="product.status==='Installed'" (click)="openFeedbackPage()" round>Feedback</button>
   <button ion-button small *ngIf="product.status==='ProblemInInstallation'">View Details</button>
 
-</ion-card>
+</div>
 
   <ion-list>
     <ion-list-header>Dealer Details</ion-list-header>
     <ion-item>
-      <ion-icon item-start name="checkmark-circle"></ion-icon>
+      <ion-icon  item-start name="person" color="primary"></ion-icon>
       <ion-label>Name : </ion-label>
       <p item-end>{{product.dealer.name}}</p>
     </ion-item>
     <ion-item>
-        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-icon  item-start  name="home" color="primary"></ion-icon>
         <ion-label>Address : </ion-label>
         <p item-end>{{product.dealer.address}}</p>
       </ion-item>
       <ion-item>
-          <ion-icon item-start name="checkmark-circle"></ion-icon>
+          <ion-icon  item-start name="call" color="primary"></ion-icon>
           <ion-label>Phone : </ion-label>
           <p item-end>{{product.dealer.phone}}</p>
         </ion-item>
   </ion-list>
 
-  <button ion-button full (click)="openReportIncidentPage()">Report Incident</button>
-
+<div padding>
+  <button ion-button block (click)="openReportIncidentPage()">Report Incident</button>
+</div>
 </div>
 
 

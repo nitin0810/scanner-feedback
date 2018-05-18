@@ -1,20 +1,17 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Login</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content padding>
+
+<ion-content>
   <form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
-    <ion-list>
+    <ion-title>
+      Login
+    </ion-title>
+    <ion-card>
 
       <ion-item>
-        <ion-icon name="person" item-left></ion-icon>
-        <ion-label fixed>Contact No.</ion-label>
-        <ion-input type="text" formControlName="contactNo" ></ion-input>
+        <ion-icon  name="person" item-left></ion-icon>
+        <ion-label stacked>Contact No.</ion-label>
+        <ion-input type="text" formControlName="contactNo" placeholder="Add phone number"></ion-input>
       </ion-item>
       <ion-item no-lines *ngIf="(contactNo.dirty || submitAttempt) && !contactNo.valid">
         <p *ngIf="contactNo.hasError('required')" style="color: red">Contact No. is required.</p>
@@ -22,18 +19,19 @@
       </ion-item>
 
       <ion-item>
-        <ion-icon name="unlock" item-left></ion-icon>
-        <ion-label fixed>Password</ion-label>
-        <ion-input type="password" formControlName="password" ></ion-input>
+        <ion-icon  name="unlock" item-left></ion-icon>
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password" formControlName="password" placeholder="Add Password"></ion-input>
       </ion-item>
       <ion-item no-lines *ngIf="(password.dirty || submitAttempt) && !password.valid">
         <p style="color: red">Password is required.</p>
       </ion-item>
+      <button type="submit" ion-button full>Log In</button>
 
-    </ion-list>
+    </ion-card>
 
-    <button type="button" ion-button clear (click)="onRegister()">Register</button>
+    <button type="button" ion-button clear (click)="onRegister()" float-right>Register</button>
 
-    <button type="submit" ion-button full>Log In</button>
+
   </form>
 </ion-content>
