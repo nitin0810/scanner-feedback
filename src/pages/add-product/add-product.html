@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-toolbar no-lines>
-      <ion-buttons start>
+    <ion-toolbar>
+      <ion-buttons item-left>
         <button ion-button (click)="dismiss()">
           <span>Cancel</span>
         </button>
       </ion-buttons>
-      <ion-title no-lines>Add Product</ion-title>
+      <!-- <ion-title>Add Product</ion-title> -->
     </ion-toolbar>
   </ion-navbar>
 
@@ -23,8 +23,8 @@
 <ion-content>
 
   <div text-center padding>
-    <button ion-button icon-only>
-      <ion-icon  name="qr-scanner"></ion-icon>
+    <img src="https://www.iconshock.com/image/Stroke/Computer_gadgets/barcode_scanner" class="status-image center-block"/>
+    <button ion-button round>
       Scan Code
     </button>
 
@@ -34,7 +34,7 @@
 
   <ion-card>
     <ion-list-header>
-      Product name
+      Add product
     </ion-list-header>
     <ion-item>
       <ion-label>Select Brand</ion-label>

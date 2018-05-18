@@ -20,6 +20,7 @@
     <form [formGroup]="registerForm" novalidate>
 
       <ion-item>
+        <ion-icon name="person" color="primary" item-left></ion-icon>
         <ion-label floating>Name</ion-label>
         <ion-input [class.invalid]="(name.dirty || submitAttempt) && !name.valid" formControlName="name"></ion-input>
       </ion-item>
@@ -28,6 +29,7 @@
       </ion-item>
 
       <ion-item>
+          <ion-icon name="call" color="primary" item-left></ion-icon>
         <ion-label floating>Contact No.</ion-label>
         <ion-input [class.invalid]="(contact.dirty || submitAttempt) && !contact.valid" formControlName="contact"></ion-input>
       </ion-item>
@@ -37,6 +39,7 @@
 
 
       <ion-item>
+          <ion-icon name="lock" color="primary" item-left></ion-icon>
         <ion-label floating>Password</ion-label>
         <ion-input [class.invalid]="(password.dirty || submitAttempt) && !password.valid" formControlName="password"></ion-input>
       </ion-item>
@@ -45,6 +48,7 @@
       </ion-item>
 
       <ion-item>
+          <ion-icon name="lock" color="primary" item-left></ion-icon>
         <ion-label floating>Confirm Password</ion-label>
         <ion-input [class.invalid]="(confirmPassword.dirty || submitAttempt) && (!confirmPassword.valid || !isSameAsPassword())"
           formControlName="confirmPassword"></ion-input>
@@ -58,6 +62,7 @@
 
 
       <ion-item>
+          <ion-icon name="mail" color="primary" item-left></ion-icon>
         <ion-label floating>Email</ion-label>
         <ion-input [class.invalid]="(email.dirty || submitAttempt) && !email.valid" formControlName="email"></ion-input>
       </ion-item>
@@ -66,6 +71,7 @@
       </ion-item>
 
       <ion-item>
+          <ion-icon name="home" color="primary" item-left></ion-icon>
         <ion-label floating>Address</ion-label>
         <ion-textarea [class.invalid]="(address.dirty || submitAttempt) && !address.valid" formControlName="address"></ion-textarea>
       </ion-item>
