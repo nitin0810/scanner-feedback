@@ -23,23 +23,23 @@
     </ion-item>
 
     <ion-card>
-        <ion-item text-wrap>
-            <small>Description</small>
-          <p>{{incident.incident.description}}</p>
-        </ion-item>
-    <ion-item>
-      <ion-icon  item-start name="checkmark-circle" color="primary"></ion-icon>
-      <ion-label>Status : </ion-label>
-      <b item-end>{{incident.incident.status}}</b>
-    </ion-item>
-  </ion-card>
+      <ion-item text-wrap>
+        <small>Description</small>
+        <p>{{incident.incident.description}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="checkmark-circle" color="primary"></ion-icon>
+        <ion-label>Status : </ion-label>
+        <b item-end>{{incident.incident.status}}</b>
+      </ion-item>
+    </ion-card>
 
-  <ion-list-header *ngIf="incident.incident.images.length">Images</ion-list-header>
-  <ion-slides *ngIf="incident.incident.images.length" pager autoplay="1000">
-    <ion-slide  *ngFor="let img of incident.incident.images">
+    <ion-list-header *ngIf="incident.incident.images.length">Images</ion-list-header>
+    <ion-slides *ngIf="incident.incident.images.length" pager autoplay="1000">
+      <ion-slide *ngFor="let img of incident.incident.images">
         <img [src]="img">
-    </ion-slide>
-  </ion-slides>
+      </ion-slide>
+    </ion-slides>
 
 
     <div [ngSwitch]="incident.incident.status">
@@ -48,14 +48,14 @@
 
       <ion-card>
         <ion-item *ngSwitchCase="'Scheduled'">
-          <ion-icon  item-start name="time" color="primary"></ion-icon>
+          <ion-icon item-start name="time" color="primary"></ion-icon>
           <ion-label>Scheduled : </ion-label>
           <p item-end>{{incident.incident.scheduledDate}}</p>
         </ion-item>
 
       </ion-card>
 
-        <!-- <ion-list no-lines>
+      <!-- <ion-list no-lines>
           <ion-list-header> Engineer Details </ion-list-header>
           <ion-item>
             <ion-icon  item-start name="person"></ion-icon>
@@ -67,71 +67,103 @@
           </ion-item>
         </ion-list> -->
 
- 
+
       <ion-card *ngSwitchCase="'Rescheduled'">
-          <ion-item>
-            <ion-icon  item-start name="time" color="primary"></ion-icon>
-            <h4>Rescheduled : </h4>
-            <span item-end>{{incident.incident.reScheduledDate}}</span>
-      
-          </ion-item>
-          <ion-grid *ngIf="!rescheduleConfirmed">
-              <ion-row justify-content-center>
-                <ion-col col-6 >
-                <button ion-button small (click)="onConfirm()" float-right round>Confirm</button>
-                </ion-col>
-                <ion-col col-6>
-                    <button ion-button small (click)="onChange()" round>Change</button>
-                    </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card>
+        <ion-item>
+          <ion-icon item-start name="time" color="primary"></ion-icon>
+          <h4>Rescheduled : </h4>
+          <span item-end>{{incident.incident.reScheduledDate}}</span>
+
+        </ion-item>
+        <ion-grid *ngIf="!rescheduleConfirmed">
+          <ion-row justify-content-center>
+            <ion-col col-6>
+              <button ion-button small (click)="onConfirm()" float-right round>Confirm</button>
+            </ion-col>
+            <ion-col col-6>
+              <button ion-button small (click)="onChange()" round>Change</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
 
       <div *ngSwitchCase="'Engineer Assigned'">
         <ion-card>
-        <ion-item>
-          <ion-icon  item-start name="time" color="primary"></ion-icon>
-          <ion-label>Scheduled : </ion-label>
-          <p item-end>{{incident.incident.scheduledDate}}</p>
-        </ion-item>
-      </ion-card>
-      <ion-card>
+          <ion-item>
+            <ion-icon item-start name="time" color="primary"></ion-icon>
+            <ion-label>Scheduled : </ion-label>
+            <p item-end>{{incident.incident.scheduledDate}}</p>
+          </ion-item>
+        </ion-card>
+        <ion-card>
           <ion-list-header> Engineer Details </ion-list-header>
           <ion-item>
-            <ion-icon  item-start name="person" color="primary"></ion-icon>
+            <ion-icon item-start name="person" color="primary"></ion-icon>
             {{incident.incident.engineer.name}}
           </ion-item>
           <ion-item>
-            <ion-icon  item-start name="call" color="primary"></ion-icon>
+            <ion-icon item-start name="call" color="primary"></ion-icon>
             {{incident.incident.engineer.phone}}
           </ion-item>
-      </ion-card>
+        </ion-card>
       </div>
 
       <div *ngSwitchCase="'Fixed'">
+        <ion-item>
+          <ion-icon item-start name="time"></ion-icon>
+          <ion-label>Fixed : </ion-label>
+          <p item-end>{{incident.incident.fixDate}}</p>
+        </ion-item>
         <ion-card>
           <ion-list-header> Engineer Details </ion-list-header>
           <ion-item>
-            <ion-icon  item-start name="person" color="primary"></ion-icon>
-          {{incident.incident.engineer.name}}
+            <ion-icon item-start name="person" color="primary"></ion-icon>
+            {{incident.incident.engineer.name}}
           </ion-item>
           <ion-item>
-            <ion-icon  item-start name="call" color="primary"></ion-icon>
+            <ion-icon item-start name="call" color="primary"></ion-icon>
             {{incident.incident.engineer.phone}}
           </ion-item>
-        <div text-center>
-          <button ion-button small round (click)="onFeedback()">Feedback</button>
-        </div>
-      </ion-card>
+          <div padding>
+            <h5>
+              <b>Comment</b>
+            </h5>
+            <p>{{incident.incident.commentByEngineer}}</p>
+          </div>
+          <div text-center>
+            <button ion-button small round (click)="onFeedback()">Feedback</button>
+          </div>
+        </ion-card>
       </div>
 
+      <div *ngSwitchCase="'Not Fixed'">
+      
+          <ion-card>
+            <ion-list-header> Engineer Details </ion-list-header>
+            <ion-item>
+              <ion-icon item-start name="person" color="primary"></ion-icon>
+              {{incident.incident.engineer.name}}
+            </ion-item>
+            <ion-item>
+              <ion-icon item-start name="call" color="primary"></ion-icon>
+              {{incident.incident.engineer.phone}}
+            </ion-item>
+            <div padding text-wrap >
+              <p style="color: red">Problem not fixed yet, will be rescheduled soon . </p>
+            </div>
+            <div text-center>
+              <button ion-button small round (click)="onFeedback()">Feedback</button>
+            </div>
+          </ion-card>
+        </div>
+     
       <div *ngSwitchCase="'Rejected'">
         <ion-card>
-        <ion-item text-wrap>
-          <small>Reason for rejection</small>
-          <p>{{incident.incident.rejectReason}}</p>
-        </ion-item>
-      </ion-card>
+          <ion-item text-wrap>
+            <small>Reason for rejection</small>
+            <p>{{incident.incident.rejectReason}}</p>
+          </ion-item>
+        </ion-card>
       </div>
     </div>
   </div>

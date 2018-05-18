@@ -50,6 +50,21 @@ export class IncidentService {
                 incident: {
                     status: 'Fixed', created: '1 day ago', description: "Product's display not working properly",scheduledDate:'11:00 AM, 24 May 2018',
                     engineer:{name:'Mukesh Kumar',phone:'8965471235'},
+                    commentByEngineer:'IC 345 got burnt and diplay kit is in bad condition, Problem has been fixed temporarily, kit replacement is needed .',
+                    fixDate:'10:40 AM, 25 Jun 2018',
+                    rejectReason:'Product is out of warranty',
+                    images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_tZn7f6OQ2SLG4EguSdCzYPsMjJzURiUuso6wcqvc7EbnMC883A','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5OBu3oV53dJWzc-HUyzChgolbkOm7VtSrtKXH_IHuwDRPE0fs3g']
+                }   
+            },
+            {
+                img: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTpSo_YJ46Qb7nGdH88YXc8M5HCNUo7fv-nrAhhsJjCVvY0Xuvr_GPKybVvBA&usqp=CAc ',
+                name: 'Carrier 1.5 Ton Split AC', category: 'Electrical', regDate: 'Oct 12,2013', purDate: 'Oct 4 2016', warranty: '5 years', regNo: 'AD12347', mrp: ' Rs 18000',
+                status: 'ProblemInInstallation', dealer: { name: 'MNO Dealers Pvt Ltd', address: 'Rohini Sec 45', phone: '9133563214' },
+                incident: {
+                    status: 'Not Fixed', created: '1 day ago', description: "Product's display not working properly",scheduledDate:'11:00 AM, 24 May 2018',
+                    engineer:{name:'Mukesh Kumar',phone:'8965471235'},
+                    commentByEngineer:'IC 345 got burnt and diplay kit is in bad condition, Problem has been fixed temporarily, kit replacement is needed .',
+                    fixDate:'10:40 AM, 25 Jun 2018',
                     rejectReason:'Product is out of warranty',
                     images: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_tZn7f6OQ2SLG4EguSdCzYPsMjJzURiUuso6wcqvc7EbnMC883A','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5OBu3oV53dJWzc-HUyzChgolbkOm7VtSrtKXH_IHuwDRPE0fs3g']
                 }   

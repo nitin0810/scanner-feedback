@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Alert } from 'ionic-angular';
+import { CustomService } from '../../../providers/custom.service';
 
 
 
@@ -15,6 +16,8 @@ export class EngineerIncidentPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    private alertCtrl: AlertController,
+    private customService:CustomService
   ) {
   }
 
@@ -22,4 +25,38 @@ export class EngineerIncidentPage {
     this.incident = this.navParams.get('incident');
   }
 
+  onSchedule() {
+this.navCtrl.push('ChangeTimePage');
+  }
+
+  onReject() {
+
+    const alert: Alert = this.alertCtrl.create({
+      title: 'Reject Incident',
+      subTitle: 'Please specify the reason',
+      inputs: [{
+        type: 'text'
+      }],
+      buttons: [{
+        text: 'Cancel',
+        role: 'cancel'
+      }, {
+        text: 'Reject',
+        handler: (data) => {
+          console.log(data);
+          this.customService.showToast('Complaint Rejected Successfully');
+        }
+      }]
+    });
+    alert.present();
+  }
+
+  onFixed() {
+    this.navCtrl.push('FixProductPage',{'isFixed':true});
+  }
+
+  onNotFixed() {
+    this.navCtrl.push('FixProductPage',{'isFixed':false});
+
+  }
 }

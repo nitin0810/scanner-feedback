@@ -24,4 +24,4 @@ export class ChangeTimePage {
     this.navCtrl.pop();
   }
 
-}
+}   
