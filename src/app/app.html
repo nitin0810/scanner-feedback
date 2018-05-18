@@ -5,7 +5,7 @@
             <h2 text-center>{{userName | titlecase}}</h2>
         </div>
     </ion-header> -->
-    <ion-content>
+    <ion-content class="sidebar">
         <ion-list>
             <button ion-item *ngFor="let option of sideMenuOptions" (click)="openPage(option)" [ngClass]="{'activePage': activePage == option.component}">
                 <ion-icon  [name]="option.icon" color="primary" item-left></ion-icon>{{option.title}}

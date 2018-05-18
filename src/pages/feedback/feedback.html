@@ -9,14 +9,16 @@
 
 
 <ion-content>
+  <img src="https://www.shareicon.net/download/2016/06/27/787313_star_512x512.png" class="center-block status-image" margin-top />
+<ion-card>
+    <rating text-center></rating>
+    <ion-item>
+      <ion-label stacked>Comment</ion-label>
+      <ion-textarea placeholder="Write some comment (optional)"></ion-textarea>
+    </ion-item>
+</ion-card>
 
-  <rating text-center></rating>
-
-  <ion-item>
-    <ion-label stacked>Comment</ion-label>
-    <ion-textarea placeholder="Write some comment (optional)"></ion-textarea>
-  </ion-item>
-
-  <button ion-button full (click)="onSubmit()">Submit</button>
-
+<div padding>
+  <button ion-button block round (click)="onSubmit()">Submit</button>
+</div>
 </ion-content>

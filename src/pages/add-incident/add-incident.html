@@ -10,7 +10,6 @@
 <ion-content>
 
   <ion-card>
-    <h2>Incident Details</h2>
     <ion-list>
 
       <ion-item>
@@ -26,15 +25,13 @@
           <ion-option *ngFor="let s of subCategories" [value]="s">{{s}}</ion-option>
         </ion-select>
       </ion-item>
+      <ion-item>
+          <ion-label stacked>Description</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
     </ion-list>
   </ion-card>
 
-  <ion-card>
-    <ion-item>
-      <ion-label stacked>Description</ion-label>
-      <ion-textarea></ion-textarea>
-    </ion-item>
-  </ion-card>
 
   <div margin text-center>
     <button text-center ion-button>Add Image (optional)</button>
@@ -43,14 +40,17 @@
   <ion-list>
     <ion-list-header>User Details</ion-list-header>
     <ion-item>
+      <ion-icon name="person" item-left color="primary"></ion-icon>
       <ion-label stacked>Name</ion-label>
       <ion-input value="Vijay"></ion-input>
     </ion-item>
     <ion-item>
+        <ion-icon name="call" item-left color="primary"></ion-icon>
       <ion-label stacked>Phone</ion-label>
       <ion-input value="9563214578"></ion-input>
     </ion-item>
     <ion-item>
+        <ion-icon name="home" item-left color="primary"></ion-icon>
       <ion-label stacked>Address</ion-label>
       <ion-input value="A-456, Sec 46, Dwarka"></ion-input>
     </ion-item>

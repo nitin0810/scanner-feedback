@@ -9,14 +9,14 @@ import { IonicPage, ActionSheetController } from 'ionic-angular';
     <ion-grid no-padding>
         <ion-row>
             <ion-col no-padding>
-                <button full ion-button (click)="onSort()" [style.background-color]="sortSelected ? 'grey': ''" icon-start>
+                <button full ion-button (click)="onSort()" icon-start>
                     <ion-icon  name="arrow-round-down"></ion-icon><ion-icon  name="arrow-round-up"></ion-icon>
                 Sort By
                 </button>
             </ion-col>
 
             <ion-col no-padding>
-                    <button full ion-button (click)="onFilter()" [style.background-color]="filterSelected ? 'grey': ''" icon-start>
+                    <button full ion-button (click)="onFilter()" icon-start>
                         <ion-icon  name="funnel"></ion-icon>
                     Filter By
                     </button>

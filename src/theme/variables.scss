@@ -118,3 +118,23 @@ form{
 .shadow{
   box-shadow:0 0 10px rgba(0, 0, 0, 0.27058823529411763);
 }
+
+.sidebar{
+  .activePage{
+    color:white;
+    background:color($colors,primary);
+    ion-icon{
+      color:white;
+    }
+  }
+}
+
+.rating{
+  padding-left: 0px;
+  li{
+    ion-icon{
+      font-size:25px;
+      color:color($colors,primary)
+    }
+  }
+}
