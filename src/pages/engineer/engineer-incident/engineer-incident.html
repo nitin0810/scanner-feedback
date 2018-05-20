@@ -1,9 +1,7 @@
 <ion-header>
-
   <ion-navbar color="primary">
     <ion-title>Incident</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -11,7 +9,7 @@
 
   <div *ngIf="incident">
 
-    <ion-item>
+    <ion-item class="shadow" no-lines>
       <img item-start style="height: 70px;width: 70px" [src]="incident.img">
       <h3>
         <b>Model : </b>{{incident.name}}</h3>
@@ -27,17 +25,17 @@
     <ion-list>
       <ion-list-header>Customer Details</ion-list-header>
       <ion-item>
-        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-icon color="primary" item-start name="person"></ion-icon>
         <ion-label>Name : </ion-label>
         <p item-end>{{incident.customer.name}}</p>
       </ion-item>
       <ion-item>
-        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-icon color="primary" item-start name="home"></ion-icon>
         <ion-label>Address : </ion-label>
         <p item-end>{{incident.customer.address}}</p>
       </ion-item>
       <ion-item>
-        <ion-icon item-start name="checkmark-circle"></ion-icon>
+        <ion-icon color="primary" item-start name="call"></ion-icon>
         <ion-label>Phone : </ion-label>
         <p item-end>{{incident.customer.phone}}</p>
       </ion-item>
@@ -48,10 +46,10 @@
       <div *ngSwitchCase="'Engineer Assigned'">
         <ion-row>
           <ion-col col-6>
-            <button ion-button small (click)="onSchedule()">Schedule</button>
+            <button ion-button full (click)="onSchedule()">Schedule</button>
           </ion-col>
           <ion-col col-6>
-            <button ion-button small (click)="onReject()">Reject</button>
+            <button ion-button full (click)="onReject()">Reject</button>
           </ion-col>
         </ion-row>
       </div>
@@ -60,86 +58,74 @@
       <div *ngSwitchCase="'Scheduled'">
 
         <ion-item>
-          <ion-icon item-start name="time"></ion-icon>
+          <ion-icon color="primary" item-start name="time"></ion-icon>
           <ion-label>Scheduled : </ion-label>
           <p item-end>{{incident.incident.scheduledDate}}</p>
         </ion-item>
 
         <ion-row>
           <ion-col col-6>
-            <button ion-button small (click)="onSchedule()">Reschedule</button>
+            <button ion-button small round full (click)="onSchedule()">Reschedule</button>
           </ion-col>
           <ion-col col-6>
-            <button ion-button small (click)="onReject()">Reject</button>
+            <button ion-button small round full (click)="onReject()">Reject</button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col col-6>
-            <button ion-button small (click)="onFixed()">Fixed</button>
+            <button ion-button small round full (click)="onFixed()">Fixed</button>
           </ion-col>
           <ion-col col-6>
-            <button ion-button small (click)="onNotFixed()">Not Fixed</button>
+            <button ion-button small round full (click)="onNotFixed()">Not Fixed</button>
           </ion-col>
         </ion-row>
       </div>
 
 
       <div *ngSwitchCase="'Fixed'">
+        <ion-card>
+          <ion-item>
+            <ion-icon color="primary" item-start name="hammer"></ion-icon>
+            <ion-label>Fixed : </ion-label>
+            <p item-end>{{incident.incident.fixed.date}}</p>
+          </ion-item>
+                    <!--ENGINEER'S COMMENT -->
+                    <div  padding text-wrap>
+                      <small>
+                        <b>Enginner's Comment</b>
+                      </small>
+                      <p>{{incident.incident.fixed.comment}}</p>
+                    </div>
+                            <!-- IMAGES OF FIXED ITEM -->
+                            <ion-slides *ngIf="incident.incident.fixed.images && incident.incident.fixed.images.length" pager>
+                              <ion-slide *ngFor="let img of incident.incident.fixed.images">
+                                <img [src]="img" class="center-block">
+                              </ion-slide>
+                            </ion-slides>
+        </ion-card>
 
-        <ion-item>
-          <ion-icon item-start name="time"></ion-icon>
-          <ion-label>Scheduled : </ion-label>
-          <p item-end>{{incident.incident.scheduledDate}}</p>
-        </ion-item>
-        <ion-item>
-          <ion-icon item-start name="time"></ion-icon>
-          <ion-label>Fixed : </ion-label>
-          <p item-end>{{incident.incident.fixed.date}}</p>
-        </ion-item>
-        <!-- IMAGES OF FIXED ITEM -->
-        <ion-item *ngIf="incident.incident.fixed.images && incident.incident.fixed.images.length">
-          <h4>
-            <b>Images of Fixed Product</b>
-          </h4>
-          <div padding text-center *ngFor="let img of incident.incident.fixed.images">
-            <img [src]="img">
-          </div>
-        </ion-item>
+
         <!-- CUSTOMER'S SIGNATURE -->
-        <ion-item>
-          <!--ENGINEER'S COMMENT -->
-          <div  padding text-wrap>
-            <h5>
-              <b>Enginner's Comment</b>
-            </h5>
-            <p>{{incident.incident.fixed.comment}}</p>
-          </div>
-          <h4>
+        <ion-card>
+          <h4 padding>
             <b>Customer's signature</b>
           </h4>
           <div padding text-center>
             <img [src]="incident.incident.fixed.signature">
           </div>
-
-        </ion-item>
+        </ion-card>
         <!-- FEEDBACK BY CUSTOMER -->
-        <div  padding text-wrap>
-          <h5>
+        <ion-card text-wrap>
+          <ion-list-header>
             <b>Feedback By Customer</b>
-          </h5>
-          <ion-row align-items-center>
-            <ion-col col-3><b>Rating</b></ion-col>
-            <ion-col col-9>
-              <rating text-center [(ngModel)]="incident.incident.feedback.stars" readOnly="true"></rating>
-            </ion-col>
-          </ion-row>
-          <br>
-          <div>
-              <b>Comment</b>
-            <p>{{incident.incident.feedback.comment}}</p>
-          </div>
+          </ion-list-header>
+          <ion-item>
+            <rating text-center [(ngModel)]="incident.incident.feedback.stars" readOnly="true"></rating>  
+            <small><b>Comment</b></small>
+          <p>{{incident.incident.feedback.comment}}</p>
+          </ion-item>
 
-        </div>
+        </ion-card>
 
       </div>
     </div>

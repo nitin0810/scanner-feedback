@@ -13,9 +13,9 @@ export class EngineerIncidentService {
         return {
             assigned: [
                 {
-                    img: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTwq5NJo6FWkhICt7QKo30d_GDW3Igs61oc8xJjUv-I8p4yAgBkYUFhDA9PfRbkGm5OcCMc1_aN&usqp=CAc',
-                    name: 'LG MN190 Microwave Oven', category: 'Home Appliance', regDate: 'Oct 12,2013', purDate: 'Jun 4 2013', warranty: '1 years', regNo: 'AD12347', mrp: ' Rs 7000',
-                    status: 'Installed', dealer: { name: 'PQR Dealers Pvt Ltd', address: 'Gurugram Sec 45', phone: '9133563214' },
+                    img: 'https://cdn-live-wwf0uvrcwyr9hig.stackpathdns.com/media/catalog/product/cache/1/small_image/230x210/0dc2d03fe217f8c83829496872af24a0/1/_/1_2.jpg',
+                name: 'Dr. Aquaguard M  agna NXT HD RO', category: 'Water Purifier', regDate: 'Sep 12,2016',purDate:'Jun 4 2016',warranty:'2 years',regNo:'AD12345',mrp:'₹16,990',
+                status:'NotScheduled',dealer:{name:'Lotus Dealers Pvt Ltd', address:'Noida Sec 3',phone:'9874563214'},
                     customer: {
                         name: 'Akash Singh',
                         phone: '8578912356',
@@ -29,9 +29,9 @@ export class EngineerIncidentService {
                     }
                 },
                 {
-                    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkClxoKpZBTqVw_MlQwb5T-pFYLFD7M9QE1T3VxxW4RN4NvYaE',
-                    name: 'LG 190 L', category: 'Television', regDate: 'Sep 12,2016', purDate: 'Jun 4 2016', warranty: '2 years', regNo: 'AD12345', mrp: ' Rs 25000',
-                    status: 'Scheduled', dealer: { name: 'ABC Dealers Pvt Ltd', address: 'Noida Sec 3', phone: '9874563214' },
+                    img: 'https://cdn-live-wwf0uvrcwyr9hig.stackpathdns.com/media/catalog/product/cache/1/small_image/230x210/0dc2d03fe217f8c83829496872af24a0/e/u/eureka_forbes_vc-7023-min_1.jpg',
+                name: 'Euro Health Clean', category: 'Vaccum Cleaner', regDate: 'Oct 12,2015',purDate:'Jun 4 2014',warranty:'1 years',regNo:'AD12347',mrp:'₹6,990',
+                status:'Scheduled',dealer:{name:'American Dealers Pvt Ltd', address:'Gurugram Sec 3',phone:'9833563214'},
                     customer: {
                         name: 'Rahul Verma',
                         phone: '8278912356',
@@ -47,9 +47,9 @@ export class EngineerIncidentService {
             ],
             scheduled: [
                 {
-                    img: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTwq5NJo6FWkhICt7QKo30d_GDW3Igs61oc8xJjUv-I8p4yAgBkYUFhDA9PfRbkGm5OcCMc1_aN&usqp=CAc',
-                    name: 'LG MN190 Microwave Oven', category: 'Home Appliance', regDate: 'Oct 12,2013', purDate: 'Jun 4 2013', warranty: '1 years', regNo: 'AD12347', mrp: ' Rs 7000',
-                    status: 'Installed', dealer: { name: 'PQR Dealers Pvt Ltd', address: 'Gurugram Sec 45', phone: '9133563214' },
+                    img: 'https://cdn-live-wwf0uvrcwyr9hig.stackpathdns.com/media/catalog/product/cache/1/small_image/230x210/0dc2d03fe217f8c83829496872af24a0/s/c/scpr300.jpg',
+                    name: 'Dr. Aeroguard SCPR 300', category: 'Air Purifier', regDate: 'Oct 12,2013',purDate:'Jun 4 2013',warranty:'1 years',regNo:'AD12347',mrp:'₹13,990',
+                    status:'Installed',dealer:{name:'Sufik Dealers Pvt Ltd', address:'Gurugram Sec 45',phone:'9133563214'},
                     customer: {
                         name: 'Akash Singh',
                         phone: '8578912356',
@@ -63,9 +63,9 @@ export class EngineerIncidentService {
                     }
                 },
                 {
-                    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkClxoKpZBTqVw_MlQwb5T-pFYLFD7M9QE1T3VxxW4RN4NvYaE',
-                    name: 'LG 190 L', category: 'Television', regDate: 'Sep 12,2016', purDate: 'Jun 4 2016', warranty: '2 years', regNo: 'AD12345', mrp: ' Rs 25000',
-                    status: 'Scheduled', dealer: { name: 'ABC Dealers Pvt Ltd', address: 'Noida Sec 3', phone: '9874563214' },
+                    img: 'https://cdn-live-wwf0uvrcwyr9hig.stackpathdns.com/media/catalog/product/cache/1/small_image/230x210/0dc2d03fe217f8c83829496872af24a0/5/s/5s-1.jpg',
+                name: '5 Star Inverter Split AC – 1.00 T', category: 'Health Conditioners', regDate: 'Oct 12,2013', purDate: 'Oct 4 2016', warranty: '5 years', regNo: 'AD12347', mrp: '₹52,990.00',
+                status: 'ProblemInInstallation', dealer: { name: 'AC Dealers Pvt Ltd', address: 'Rohini Sec 45', phone: '9133563214' },
                     customer: {
                         name: 'Rahul Verma',
                         phone: '8278912356',
@@ -81,9 +81,9 @@ export class EngineerIncidentService {
             ],
             fixed: [   
                 {
-                    img: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTwq5NJo6FWkhICt7QKo30d_GDW3Igs61oc8xJjUv-I8p4yAgBkYUFhDA9PfRbkGm5OcCMc1_aN&usqp=CAc',
-                    name: 'LG MN190 Microwave Oven', category: 'Home Appliance', regDate: 'Oct 12,2013', purDate: 'Jun 4 2013', warranty: '1 years', regNo: 'AD12347', mrp: ' Rs 7000',
-                    status: 'Installed', dealer: { name: 'PQR Dealers Pvt Ltd', address: 'Gurugram Sec 45', phone: '9133563214' },
+                    img: 'https://cdn-live-wwf0uvrcwyr9hig.stackpathdns.com/media/catalog/product/cache/1/small_image/230x210/0dc2d03fe217f8c83829496872af24a0/3/2/320x400_thor.png',
+                name: 'Aquaguard On The Go Avengers Series Thor', category: 'Water Purifiers', regDate: 'Oct 12,2015', purDate: 'Jun 4 2014', warranty: '1 years', regNo: 'AD12347', mrp: '₹650',
+                status: 'Installed', dealer: { name: 'XYZ Dealers Pvt Ltd', address: 'Gurugram Sec 3', phone: '9833563214' },
                     customer: {
                         name: 'Akash Singh',
                         phone: '8578912356',
@@ -108,9 +108,9 @@ export class EngineerIncidentService {
                     }
                 },
                 {
-                    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkClxoKpZBTqVw_MlQwb5T-pFYLFD7M9QE1T3VxxW4RN4NvYaE',
-                    name: 'LG 190 L', category: 'Television', regDate: 'Sep 12,2016', purDate: 'Jun 4 2016', warranty: '2 years', regNo: 'AD12345', mrp: ' Rs 25000',
-                    status: 'Scheduled', dealer: { name: 'ABC Dealers Pvt Ltd', address: 'Noida Sec 3', phone: '9874563214' },
+                    img: 'https://cdn-live-wwf0uvrcwyr9hig.stackpathdns.com/media/catalog/product/cache/1/small_image/230x210/0dc2d03fe217f8c83829496872af24a0/e/u/eureka_forbes-wp-8664-min.jpg',
+                name: 'Aquaguard Enhance Green RO', category: 'Water Purifiers', regDate: 'Sep 12,2016', purDate: 'Jun 4 2016', warranty: '2 years', regNo: 'AD12345', mrp: '₹25000',
+                status: 'NotScheduled', dealer: { name: 'ABC Dealers Pvt Ltd', address: 'Noida Sec 3', phone: '9874563214' },
                     customer: {
                         name: 'Rahul Verma',
                         phone: '8278912356',

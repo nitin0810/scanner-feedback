@@ -15,9 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddIncidentPage {
 
-  categories=['Display','Power Supply','Sound','Physical Damage'];
-  subCategories=['Not Functioning Properly','Completely Damaged'];
-  products=['LG 190 TV','Samsung S4 Mobile','LG MN190 Microwave Oven','Carrier 1.5 Ton Split AC'];
+  categories=['Installation','Servicing','Water Test','AMC'];
+  subCategories=['Power Control','Dust Bag Indicator'];
+  products=['Dr. Aquaguard Magna NXT HD RO','Euro Health Clean','Dr. Aeroguard SCPR 300','Eurovigil I Deter 100'];
 
   fromFabBtn = false;// to decide if this page is opened through fab btn or incident -detail page
   constructor(

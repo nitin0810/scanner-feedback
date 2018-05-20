@@ -6,15 +6,23 @@
 
 
 <ion-content>
+    <img src="https://i.pinimg.com/originals/67/19/0b/67190b2076ccdf40951b613878e6bdf8.png" class="status-image center-block" margin-top />
+  <ion-card>
   <ion-item>
+    <ion-icon name="calendar" item-left color="primary"></ion-icon>
     <ion-label>Select Date</ion-label>
     <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="MMM DD, YYYY "></ion-datetime>
   </ion-item>
   <ion-item>
+      <ion-icon name="clock" item-left color="primary"></ion-icon>
       <ion-label>Select Time</ion-label>
       <ion-datetime displayFormat="hh:mm A" pickerFormat="hh:mm A"></ion-datetime>
     </ion-item>
+  </ion-card>
 
-  <button ion-button full (click)="onChangeTime()">Schedule</button>
+  <div padding>
+      <button ion-button block round (click)="onChangeTime()">Schedule</button>
+  </div>
+
 
 </ion-content>     

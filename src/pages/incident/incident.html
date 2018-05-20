@@ -34,13 +34,6 @@
       </ion-item>
     </ion-card>
 
-    <ion-list-header *ngIf="incident.incident.images.length">Images</ion-list-header>
-    <ion-slides *ngIf="incident.incident.images.length" pager autoplay="1000">
-      <ion-slide *ngFor="let img of incident.incident.images">
-        <img [src]="img">
-      </ion-slide>
-    </ion-slides>
-
 
     <div [ngSwitch]="incident.incident.status">
 
@@ -98,11 +91,11 @@
 
       <div *ngSwitchCase="'Engineer Assigned'">
         <ion-card>
-          <ion-item>
+          <!-- <ion-item>
             <ion-icon item-start name="time" color="primary"></ion-icon>
             <ion-label>Scheduled : </ion-label>
             <p item-end>{{incident.incident.scheduledDate}}</p>
-          </ion-item>
+          </ion-item> -->
         </ion-card>
         <ion-card>
           <ion-list-header> Engineer Details </ion-list-header>
@@ -119,7 +112,7 @@
 
       <div *ngSwitchCase="'Fixed'">
         <ion-item>
-          <ion-icon item-start name="time"></ion-icon>
+          <ion-icon item-start name="hammer" color="primary"></ion-icon>
           <ion-label>Fixed : </ion-label>
           <p item-end>{{incident.incident.fixDate}}</p>
         </ion-item>
@@ -175,6 +168,14 @@
         </ion-card>
       </div>
     </div>
+
+    <ion-list-header *ngIf="incident.incident.images.length">Images</ion-list-header>
+    <ion-slides *ngIf="incident.incident.images.length" pager autoplay="1000">
+      <ion-slide *ngFor="let img of incident.incident.images">
+        <img [src]="img">
+      </ion-slide>
+    </ion-slides>
+    
   </div>
 
 </ion-content>
