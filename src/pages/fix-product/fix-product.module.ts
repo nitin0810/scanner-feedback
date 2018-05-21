@@ -6,7 +6,7 @@ import { SignaturePadModule } from 'angular2-signaturepad';
 @NgModule({
   declarations: [
     FixProductPage,
-  ],
+  ],    
   imports: [
     IonicPageModule.forChild(FixProductPage),
     SignaturePadModule

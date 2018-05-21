@@ -24,6 +24,14 @@
 
     <ion-card>
       <ion-item text-wrap>
+        <ion-icon item-start name="checkmark-circle" color="primary"></ion-icon>
+        <ion-label>Warranty : </ion-label>
+        <p item-end>{{incident.warranty}}</p>
+      </ion-item>
+    </ion-card>     
+
+    <ion-card>
+      <ion-item text-wrap>
         <small>Description</small>
         <p>{{incident.incident.description}}</p>
       </ion-item>
@@ -40,20 +48,20 @@
       <div *ngSwitchCase="'New'"></div>
 
       <ion-card *ngSwitchCase="'Scheduled'">
-        <ion-item >
+        <ion-item>
           <ion-icon item-start name="time" color="primary"></ion-icon>
           <ion-label>Scheduled : </ion-label>
           <p item-end>{{incident.incident.scheduledDate}}</p>
         </ion-item>
-            <ion-list-header> Engineer Details </ion-list-header>
-            <ion-item>
-              <ion-icon item-start name="person" color="primary"></ion-icon>
-              {{incident.incident.engineer.name}}
-            </ion-item>
-            <ion-item>
-              <ion-icon item-start name="call" color="primary"></ion-icon>
-              {{incident.incident.engineer.phone}}
-            </ion-item>
+        <ion-list-header> Engineer Details </ion-list-header>
+        <ion-item>
+          <ion-icon item-start name="person" color="primary"></ion-icon>
+          {{incident.incident.engineer.name}}
+        </ion-item>
+        <ion-item>
+          <ion-icon item-start name="call" color="primary"></ion-icon>
+          {{incident.incident.engineer.phone}}
+        </ion-item>
 
       </ion-card>
 
@@ -139,26 +147,26 @@
       </div>
 
       <div *ngSwitchCase="'Not Fixed'">
-      
-          <ion-card>
-            <ion-list-header> Engineer Details </ion-list-header>
-            <ion-item>
-              <ion-icon item-start name="person" color="primary"></ion-icon>
-              {{incident.incident.engineer.name}}
-            </ion-item>
-            <ion-item>
-              <ion-icon item-start name="call" color="primary"></ion-icon>
-              {{incident.incident.engineer.phone}}
-            </ion-item>
-            <div padding text-wrap >
-              <p style="color: red">Problem not fixed yet, will be rescheduled soon . </p>
-            </div>
-            <div text-center>
-              <button ion-button small round (click)="onFeedback()">Feedback</button>
-            </div>
-          </ion-card>
-        </div>
-     
+
+        <ion-card>
+          <ion-list-header> Engineer Details </ion-list-header>
+          <ion-item>
+            <ion-icon item-start name="person" color="primary"></ion-icon>
+            {{incident.incident.engineer.name}}
+          </ion-item>
+          <ion-item>
+            <ion-icon item-start name="call" color="primary"></ion-icon>
+            {{incident.incident.engineer.phone}}
+          </ion-item>
+          <div padding text-wrap>
+            <p style="color: red">Problem not fixed yet, will be rescheduled soon . </p>
+          </div>
+          <div text-center>
+            <button ion-button small round (click)="onFeedback()">Feedback</button>
+          </div>
+        </ion-card>
+      </div>
+
       <div *ngSwitchCase="'Rejected'">
         <ion-card>
           <ion-item text-wrap>
@@ -175,7 +183,7 @@
         <img [src]="img">
       </ion-slide>
     </ion-slides>
-    
+
   </div>
 
 </ion-content>

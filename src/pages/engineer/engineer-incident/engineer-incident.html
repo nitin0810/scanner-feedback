@@ -22,6 +22,26 @@
         <b>MRP : </b>{{incident.mrp}}</h3>
     </ion-item>
 
+    <ion-card>
+      <ion-item text-wrap>
+        <ion-icon item-start name="checkmark-circle" color="primary"></ion-icon>
+        <ion-label>Warranty : </ion-label>
+        <p item-end>{{incident.warranty}}</p>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item text-wrap>
+        <small>Description</small>
+        <p>{{incident.incident.description}}</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="checkmark-circle" color="primary"></ion-icon>
+        <ion-label>Status : </ion-label>
+        <b item-end>{{incident.incident.status}}</b>
+      </ion-item>
+    </ion-card>
+
     <ion-list>
       <ion-list-header>Customer Details</ion-list-header>
       <ion-item>

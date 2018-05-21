@@ -35,9 +35,9 @@
           <p style="font-size: small">{{inc.category}}</p>
         </ion-col>
         <ion-col col-6>
-            <ion-badge float-right *ngIf="inc.incident.status==='Scheduled'">{{inc.incident.scheduledDate}}</ion-badge>
+            <ion-badge float-right *ngIf="inc.incident.status==='Scheduled'">{{inc.incident.scheduledDate.slice(0,8)}}</ion-badge>
             <ion-badge float-right *ngIf="inc.incident.status==='Engineer Assigned'">{{inc.incident.created}}</ion-badge>
-            <ion-badge float-right *ngIf="inc.incident.status==='Fixed'">{{inc.incident.fixed.date}}</ion-badge>
+            <ion-badge float-right *ngIf="inc.incident.status==='Fixed'">{{inc.incident.fixed.date.slice(10)}}</ion-badge>
           </ion-col>
       </ion-row>
     </ion-item>
